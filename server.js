@@ -2,7 +2,7 @@
 // Author(s): Zakarya Butt, Nicholas
 // Date Made: 07/09/2021
 //////////////////////////////
-'Access-Control-Allow-Origin: *'
+
 const express = require("express")
 const app = express()   
 const cors = require('cors');
@@ -11,7 +11,7 @@ require('dotenv').config();
 
 const port = process.env.PORT
 const mongoose = require('mongoose');
-const userRouter = require("../backend/routers/userRouter.js");
+const userRouter = require("./routers/userRouter");
 const User = require('./models/user');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
@@ -32,6 +32,9 @@ const connection = mongoose.connection;
 connection.once('open', () => {
   console.log("MongoDB database connection established successfully");
 })
+
+app.get("/", (req, res) => res.status(200).send("Hi hello!"));
+
 
 app.post('/register', async (req, res) => {
   const username = req.body.username;
