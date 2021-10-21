@@ -6,9 +6,9 @@
 const mongoose = require('mongoose');
 
 var companySchema = new mongoose.Schema({
-    companyName: String, 
+    name: String, 
     location: String, 
-    position: Number, 
+    position: String, 
     department: String, 
 })
 
