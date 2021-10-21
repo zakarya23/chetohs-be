@@ -10,7 +10,7 @@ require('dotenv').config();
 
 const port = process.env.PORT
 const mongoose = require('mongoose');
-const userRouter = require("../backend/routers/userRouter.js");
+const userRouter = require("./routers/userRouter.js");
 const User = require('./models/user');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
@@ -27,6 +27,10 @@ const connection = mongoose.connection;
 
 connection.once('open', () => {
   console.log("MongoDB database connection established successfully");
+})
+
+app.get('/', (req, res) => {
+    res.send("AAA");
 })
 
 app.post('/register', async (req, res) => {
