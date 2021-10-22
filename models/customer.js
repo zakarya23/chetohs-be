@@ -12,6 +12,7 @@ var customerSchema = new mongoose.Schema({
     status: String, 
     phoneNumber: String,
     gender: String,
+    dob: String,
     companyInfo: {type: mongoose.Schema.Types.ObjectId, ref: 'company'},
     priority: {
         type: String,
@@ -25,7 +26,9 @@ var customerSchema = new mongoose.Schema({
     lastContact: String,
     notes : String, 
     description: String, 
-    timeline: String
+    timeline: String,
+    toNotifyM: Boolean,
+    toNotifyLC: Boolean
 })
 
 const Customer = mongoose.model("customer", customerSchema); 

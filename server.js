@@ -30,7 +30,7 @@ connection.once('open', () => {
 })
 
 app.get('/', (req, res) => {
-    res.send("AAA");
+    res.send("WORKED"); 
 })
 
 app.post('/register', async (req, res) => {
